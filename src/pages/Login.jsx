@@ -30,7 +30,7 @@ const Login = () => {
 					guest user
 				</button>
 				<p className="text-center">
-					Not a member yet?{" "}
+					Not a member yet?
 					<Link
 						to="/register"
 						className="ml-2 link link-hover link-primary capitalize"
