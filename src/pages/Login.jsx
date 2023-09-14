@@ -13,7 +13,7 @@ const Login = () => {
 					type="email"
 					label="email"
 					name="identifier"
-					defaultValue="text@text.com"
+					defaultValue="test@test.com"
 				/>
 
 				<FormInput
