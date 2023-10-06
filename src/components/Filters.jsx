@@ -14,6 +14,12 @@ const Filters = () => {
 				size="input-sm"
 			/>
 			{/* CATEGORIES */}
+			<FormSelect
+				label="select category"
+				name="category"
+				list={meta.categories}
+				size="select-sm"
+			/>
 			{/* COMPANIES */}
 			<FormSelect
 				label="select company"
@@ -22,6 +28,12 @@ const Filters = () => {
 				size="select-sm"
 			/>
 			{/* ORDER */}
+			<FormSelect
+				label="sort by"
+				name="order"
+				list={['a-z', 'z-a', 'high', 'low']}
+				size="select-sm"
+			/>
 			{/* BUTTONS */}
 			<button type="submit" className="btn btn-primary btn-sm">
 				search
