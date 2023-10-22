@@ -1,7 +1,9 @@
-import { useLoaderData } from "react-router-dom";
-import { formatPrice, customFetch, generateAmountOptions } from "../utils";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useLoaderData } from 'react-router-dom';
+import { formatPrice, customFetch, generateAmountOptions } from '../utils';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../features/cart/cartSlice';
 
 export const loader = async ({ params }) => {
 	const response = await customFetch(`/products/${params.id}`);
@@ -18,6 +20,21 @@ const SingleProduct = () => {
 	const handleAmount = (e) => {
 		setAmount(parseInt(e.target.value));
 	};
+	const cartProduct = {
+		cartID: product.id + productColor,
+		productID: product.id,
+		image,
+		title,
+		price,
+		company,
+		productColor,
+		company,
+	};
+	const dispatch = useDispatch();
+	const addToCart = () => {
+		dispatch(addItem({ product: cartProduct }));
+	};
+
 	return (
 		<section>
 			<div className="text-md breadcrumbs">
@@ -58,7 +75,7 @@ const SingleProduct = () => {
 										key={color}
 										type="button"
 										className={`badge w-6 h-6 mr-2 ${
-											color === productColor && "border-2 border-secondary"
+											color === productColor && 'border-2 border-secondary'
 										}`}
 										style={{ backgroundColor: color }}
 										onClick={() => setProductColor(color)}
@@ -87,7 +104,7 @@ const SingleProduct = () => {
 					<div className="mt-10">
 						<button
 							className="btn btn-secondary btn-md"
-							onClick={() => console.log("added")}
+							onClick={() => console.log('added')}
 						>
 							Add to bag
 						</button>
