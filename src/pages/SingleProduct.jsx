@@ -17,9 +17,11 @@ const SingleProduct = () => {
 	const dollarsAmount = formatPrice(price);
 	const [productColor, setProductColor] = useState(colors[0]);
 	const [amount, setAmount] = useState(1);
+
 	const handleAmount = (e) => {
 		setAmount(parseInt(e.target.value));
 	};
+
 	const cartProduct = {
 		cartID: product.id + productColor,
 		productID: product.id,
@@ -30,7 +32,9 @@ const SingleProduct = () => {
 		productColor,
 		company,
 	};
+
 	const dispatch = useDispatch();
+
 	const addToCart = () => {
 		dispatch(addItem({ product: cartProduct }));
 	};
@@ -102,10 +106,7 @@ const SingleProduct = () => {
 					</div>
 					{/* ADD TO CART */}
 					<div className="mt-10">
-						<button
-							className="btn btn-secondary btn-md"
-							onClick={() => console.log('added')}
-						>
+						<button className="btn btn-secondary btn-md" onClick={addToCart}>
 							Add to bag
 						</button>
 					</div>
