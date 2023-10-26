@@ -1,5 +1,9 @@
-import { FormInput, SubmitBtn } from "../components";
-import { Form, Link } from "react-router-dom";
+import { FormInput, SubmitBtn } from '../components';
+import { Form, Link } from 'react-router-dom';
+
+export const action = async () => {
+	return null;
+};
 
 const Register = () => {
 	return (
