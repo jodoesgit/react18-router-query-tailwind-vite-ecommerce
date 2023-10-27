@@ -1,5 +1,13 @@
-import { FormInput, SubmitBtn } from "../components";
-import { Form, Link } from "react-router-dom";
+import { FormInput, SubmitBtn } from '../components';
+import { Form, Link, redirect, useNavigate } from 'react-router-dom';
+import { customFetch } from '../utils';
+import { toast } from 'react-toastify';
+import { loginUser } from '../features/user/userSlice';
+
+export const action = (store) => async () => {
+	console.log(store);
+	return null;
+};
 
 const Login = () => {
 	return (
