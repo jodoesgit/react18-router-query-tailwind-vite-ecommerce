@@ -41,6 +41,7 @@ export const action =
 			const errorMessage =
 				error?.response?.data?.error?.message || 'Something went wrong';
 			toast.error(errorMessage);
+			if (error.response.status === 401) return redirect('/login');
 			return null;
 		}
 	};
